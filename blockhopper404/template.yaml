@@ -1,0 +1,53 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: BlockHopper
+    network: {{ network }}
+    source:
+      address: "{{ address }}"
+      abi: BlockHopper
+      startBlock: {{ startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ApprovalForAll
+        - ERC20Approval
+        - ERC20Transfer
+        - ERC721Approval
+        - ERC721Transfer
+        - RaritySeedRemoved
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - Transfer
+      abis:
+        - name: BlockHopper
+          file: ./abis/BlockHopper.json
+      eventHandlers:
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: ERC20Approval(indexed address,indexed address,uint256)
+          handler: handleERC20Approval
+        - event: ERC20Transfer(indexed address,indexed address,uint256)
+          handler: handleERC20Transfer
+        - event: ERC721Approval(indexed address,indexed address,indexed uint256)
+          handler: handleERC721Approval
+        - event: ERC721Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleERC721Transfer
+        - event: RaritySeedRemoved(indexed address,indexed uint256,indexed uint256)
+          handler: handleRaritySeedRemoved
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/block-hopper.ts
