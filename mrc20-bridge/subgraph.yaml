@@ -1,0 +1,41 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MRC20Bridge
+    network: mumbai
+    source:
+      address: '0xEc881A21CB3Cb7C5E46597748b68DB6Fc2b54D5C'
+      abi: MRC20Bridge
+      startBlock: 46220281
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AddToken
+        - Claim
+        - Deposit
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+      abis:
+        - name: MRC20Bridge
+          file: ./abis/MRC20Bridge.json
+      eventHandlers:
+        - event: AddToken(address,uint256)
+          handler: handleAddToken
+        - event: Claim(indexed address,uint256,indexed uint256,uint256,indexed uint256)
+          handler: handleClaim
+        - event: Deposit(uint256)
+          handler: handleDeposit
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+      file: ./src/mrc-20-bridge.ts

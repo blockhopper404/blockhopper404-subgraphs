@@ -1,0 +1,23 @@
+{
+  "name": "mrc721-bridge",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy:bsctest": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc721-bridge-bsctest",
+    "deploy:mumbai": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc721-bridge-mumbai",
+    "create-local": "graph create --node http://localhost:8020/ shayanshiravani/mrc721-bridge",
+    "remove-local": "graph remove --node http://localhost:8020/ shayanshiravani/mrc721-bridge",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 shayanshiravani/mrc721-bridge",
+    "test": "graph test",
+    "prepare:bsctest": "mustache config/bsctest.json template.yaml > subgraph.yaml",
+    "prepare:mumbai": "mustache config/mumbai.json template.yaml > subgraph.yaml"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.67.4",
+    "@graphprotocol/graph-ts": "0.32.0"
+  },
+  "devDependencies": {
+    "matchstick-as": "0.5.0"
+  }
+}
