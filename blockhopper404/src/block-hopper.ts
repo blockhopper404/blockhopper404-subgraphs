@@ -5,6 +5,7 @@ import {
   ERC721Approval as ERC721ApprovalEvent,
   ERC721Transfer as ERC721TransferEvent,
   RaritySeedRemoved as RaritySeedRemovedEvent,
+  RaritySeedSet as RaritySeedSetEvent,
   RoleAdminChanged as RoleAdminChangedEvent,
   RoleGranted as RoleGrantedEvent,
   RoleRevoked as RoleRevokedEvent,
@@ -17,6 +18,7 @@ import {
   ERC721Approval,
   ERC721Transfer,
   RaritySeedRemoved,
+  RaritySeedSet,
   RoleAdminChanged,
   RoleGranted,
   RoleRevoked,
@@ -103,6 +105,23 @@ export function handleRaritySeedRemoved(event: RaritySeedRemovedEvent): void {
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.caller = event.params.caller
+  entity.from = event.params.from
+  entity.BlockHopper_id = event.params.id
+  entity.seed = event.params.seed
+
+  entity.blockNumber = event.block.number
+  entity.blockTimestamp = event.block.timestamp
+  entity.transactionHash = event.transaction.hash
+
+  entity.save()
+}
+
+export function handleRaritySeedSet(event: RaritySeedSetEvent): void {
+  let entity = new RaritySeedSet(
+    event.transaction.hash.concatI32(event.logIndex.toI32())
+  )
+  entity.caller = event.params.caller
+  entity.to = event.params.to
   entity.BlockHopper_id = event.params.id
   entity.seed = event.params.seed
 

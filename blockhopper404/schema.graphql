@@ -51,6 +51,18 @@ type ERC721Transfer @entity(immutable: true) {
 type RaritySeedRemoved @entity(immutable: true) {
   id: Bytes!
   caller: Bytes! # address
+  from: Bytes! # address
+  BlockHopper_id: BigInt! # uint256
+  seed: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RaritySeedSet @entity(immutable: true) {
+  id: Bytes!
+  caller: Bytes! # address
+  to: Bytes! # address
   BlockHopper_id: BigInt! # uint256
   seed: BigInt! # uint256
   blockNumber: BigInt!
