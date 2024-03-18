@@ -121,6 +121,12 @@
         "type": "uint256"
       },
       {
+        "indexed": false,
+        "internalType": "uint256[]",
+        "name": "nftIds",
+        "type": "uint256[]"
+      },
+      {
         "indexed": true,
         "internalType": "uint256",
         "name": "tokenId",

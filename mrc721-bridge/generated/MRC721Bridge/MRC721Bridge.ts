@@ -57,8 +57,12 @@ export class Claim__Params {
     return this._event.parameters[2].value.toBigInt();
   }
 
+  get nftIds(): Array<BigInt> {
+    return this._event.parameters[3].value.toBigIntArray();
+  }
+
   get tokenId(): BigInt {
-    return this._event.parameters[3].value.toBigInt();
+    return this._event.parameters[4].value.toBigInt();
   }
 }
 

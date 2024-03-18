@@ -55,3 +55,20 @@ type RoleRevoked @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type BridgeEntity @entity {
+  id: Bytes!
+  blockNo: BigInt!
+  txHash: Bytes!
+  blockHash: Bytes!
+  time: BigInt!
+  txId: BigInt!
+  tokenId: BigInt!
+  fromChain: BigInt!
+  toChain: BigInt
+  user: Bytes!
+  nftIds: [BigInt!]
+  tokenAddress: Bytes!
+  deposited: Boolean!
+  claimed: Boolean!
+}

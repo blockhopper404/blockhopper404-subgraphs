@@ -28,7 +28,7 @@ dataSources:
       eventHandlers:
         - event: AddToken(address,uint256)
           handler: handleAddToken
-        - event: Claim(indexed address,uint256,indexed uint256,indexed uint256)
+        - event: Claim(indexed address,uint256,indexed uint256,uint256[],indexed uint256)
           handler: handleClaim
         - event: Deposit(uint256)
           handler: handleDeposit
