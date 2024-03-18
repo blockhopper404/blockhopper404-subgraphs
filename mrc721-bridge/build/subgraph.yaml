@@ -8,9 +8,9 @@ dataSources:
     name: MRC721Bridge
     network: mumbai
     source:
-      address: "0x4ea97448d7fBA5Ce325fD146Ba4D76Cd4808BC5b"
+      address: "0xC200536beD0dDD8d13eA7C8Eabda762f33028FB0"
       abi: MRC721Bridge
-      startBlock: 46215698
+      startBlock: 47186092
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
