@@ -5,10 +5,14 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy:bsctest": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/blockhopper404-bsctest",
+    "deploy:mumbai": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/blockhopper404-mumbai",
+    "deploy:sepolia": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/blockhopper404-sepolia",
     "create-local": "graph create --node http://localhost:8020/ shayanshiravani/blockhopper404",
     "remove-local": "graph remove --node http://localhost:8020/ shayanshiravani/blockhopper404",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 shayanshiravani/blockhopper404",
     "prepare:bsctest": "mustache config/bsctest.json template.yaml > subgraph.yaml",
+    "prepare:mumbai": "mustache config/mumbai.json template.yaml > subgraph.yaml",
+    "prepare:sepolia": "mustache config/sepolia.json template.yaml > subgraph.yaml",
     "test": "graph test"
   },
   "dependencies": {
