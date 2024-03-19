@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: MRC20Bridge
-    network: mumbai
+    network: sepolia
     source:
-      address: "0xEc881A21CB3Cb7C5E46597748b68DB6Fc2b54D5C"
+      address: "0x90FeC556De8caf34E2f4c655a954e4C6Dc0F1b22"
       abi: MRC20Bridge
-      startBlock: 46220281
+      startBlock: 5499337
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
