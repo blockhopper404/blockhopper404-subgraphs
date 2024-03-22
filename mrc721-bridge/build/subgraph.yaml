@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: MRC721Bridge
-    network: mumbai
+    network: sepolia
     source:
-      address: "0xC200536beD0dDD8d13eA7C8Eabda762f33028FB0"
+      address: "0x1fFD99C83a02899B403e2ed7fABDb2EcB82b2573"
       abi: MRC721Bridge
-      startBlock: 47186092
+      startBlock: 5531447
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
