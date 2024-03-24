@@ -1,5 +1,5 @@
 {
-  "network": "arbitrum-one",
+  "network": "blast-mainnet",
   "address": "0xC4A08fAf00dA2843373851CD1031169B4eDfFF6a",
-  "startBlock": "193487139"
+  "startBlock": "1241060"
 }

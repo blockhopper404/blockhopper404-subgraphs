@@ -8,9 +8,9 @@ dataSources:
     name: BlockHopper
     network: sepolia
     source:
-      address: "0x58DbBEB59248c170AE005dF7Fd14eaB58BaED147"
+      address: "0xfF86592e3b9D94ACFc9Cc798E77160EA0A944e4f"
       abi: BlockHopper
-      startBlock: 5529722
+      startBlock: 5550426
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

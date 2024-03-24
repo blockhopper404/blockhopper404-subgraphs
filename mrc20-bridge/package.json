@@ -8,8 +8,11 @@
     "deploy:mumbai": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc20-bridge-mumbai",
     "deploy:sepolia": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc20-bridge-sepolia",
     "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc20-bridge-mainnet",
-    "deploy:optimisim": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc20-bridge-optimisim",
+    "deploy:optimism": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc20-bridge-optimisim",
     "deploy:arbitrum-one": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc20-bridge-arbitrum-one",
+    "deploy:base": "graph deploy --node https://api.studio.thegraph.com/deploy/ mrc20-bridge-base",
+    "deploy:blast": "graph deploy --node https://api.studio.thegraph.com/deploy/ mrc20-bridge-blast",
+    "deploy:bsc": "graph deploy --node https://api.thegraph.com/deploy/ shayanshiravani/mrc20-bridge-bsc",
     "create-local": "graph create --node http://localhost:8020/ shayanshiravani/mrc20-bridge",
     "remove-local": "graph remove --node http://localhost:8020/ shayanshiravani/mrc20-bridge",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 shayanshiravani/mrc20-bridge",
@@ -18,8 +21,11 @@
     "prepare:mumbai": "mustache config/mumbai.json template.yaml > subgraph.yaml",
     "prepare:sepolia": "mustache config/sepolia.json template.yaml > subgraph.yaml",
     "prepare:mainnet": "mustache config/mainnet.json template.yaml > subgraph.yaml",
-    "prepare:optimisim": "mustache config/optimisim.json template.yaml > subgraph.yaml",
-    "prepare:arbitrum-one": "mustache config/arbitrum-one.json template.yaml > subgraph.yaml"
+    "prepare:optimism": "mustache config/optimism.json template.yaml > subgraph.yaml",
+    "prepare:arbitrum-one": "mustache config/arbitrum-one.json template.yaml > subgraph.yaml",
+    "prepare:base": "mustache config/base.json template.yaml > subgraph.yaml",
+    "prepare:blast": "mustache config/blast.json template.yaml > subgraph.yaml",
+    "prepare:bsc": "mustache config/bsc.json template.yaml > subgraph.yaml"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.67.4",
