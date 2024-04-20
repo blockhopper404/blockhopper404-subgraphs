@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: BlockHopper
-    network: bsc
+    network: sepolia
     source:
-      address: "0xa077C4adD9564214dDc77a607F73B4f4c48F8eB8"
+      address: "0x4Aec3858042cB536506abC1a200902E985f18166"
       abi: BlockHopper
-      startBlock: 37251148
+      startBlock: 5730700
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -21,6 +21,7 @@ dataSources:
         - ERC20Transfer
         - ERC721Approval
         - ERC721Transfer
+        - ERC721TransferByCaller
         - RaritySeedRemoved
         - RaritySeedSet
         - RoleAdminChanged
@@ -41,10 +42,8 @@ dataSources:
           handler: handleERC721Approval
         - event: ERC721Transfer(indexed address,indexed address,indexed uint256)
           handler: handleERC721Transfer
-        - event: RaritySeedRemoved(address,indexed address,indexed uint256,indexed uint256)
-          handler: handleRaritySeedRemoved
-        - event: RaritySeedSet(address,indexed address,indexed uint256,indexed uint256)
-          handler: handleRaritySeedSet
+        - event: ERC721TransferByCaller(address,indexed address,indexed address,indexed uint256)
+          handler: handleERC721TransferByCaller
         - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
           handler: handleRoleAdminChanged
         - event: RoleGranted(indexed bytes32,indexed address,indexed address)

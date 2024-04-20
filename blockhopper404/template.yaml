@@ -21,6 +21,7 @@ dataSources:
         - ERC20Transfer
         - ERC721Approval
         - ERC721Transfer
+        - ERC721TransferByCaller
         - RaritySeedRemoved
         - RaritySeedSet
         - RoleAdminChanged
@@ -41,10 +42,8 @@ dataSources:
           handler: handleERC721Approval
         - event: ERC721Transfer(indexed address,indexed address,indexed uint256)
           handler: handleERC721Transfer
-        - event: RaritySeedRemoved(address,indexed address,indexed uint256,indexed uint256)
-          handler: handleRaritySeedRemoved
-        - event: RaritySeedSet(address,indexed address,indexed uint256,indexed uint256)
-          handler: handleRaritySeedSet
+        - event: ERC721TransferByCaller(address,indexed address,indexed address,indexed uint256)
+          handler: handleERC721TransferByCaller
         - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
           handler: handleRoleAdminChanged
         - event: RoleGranted(indexed bytes32,indexed address,indexed address)
